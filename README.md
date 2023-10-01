@@ -13,11 +13,13 @@ python train.py --network resnet50 --num_workers 1 --cpu_usage True
 
 ## Installation
 ##### Clone and install
-1. git clone [https://github.com/licksylick/retinaface_with_face_alignment.git](https://github.com/licksylick/retinaface_with_face_alignment.git)
+1. git clone [https://github.com/licksylick/retinaface_with_face_alignment.git](https://github.com/licksylick/retinaface_with_face_alignment.git)  
+2. !wget https://github.com/davisking/dlib-models/raw/4af9b776281dd7d6e2e30d4a2d40458b1e254e40/shape_predictor_5_face_landmarks.dat.bz2  
+!bzip2 -d shape_predictor_5_face_landmarks.dat.bz2
 
-2. Pytorch version 1.1.0+ and torchvision 0.3.0+ are needed.
+3. Pytorch version 1.1.0+ and torchvision 0.3.0+ are needed.
 
-3. Codes are based on Python 3
+4. Codes are based on Python 3
 
 ##### Data
 Link: from [google cloud](https://drive.google.com/open?id=11UGV3nbVv1x9IC--_tK3Uxf7hA6rlbsS)    
