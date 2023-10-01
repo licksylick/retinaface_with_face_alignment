@@ -19,7 +19,7 @@ python train.py --network resnet50 --num_workers 1 --cpu_usage True
 3. Codes are based on Python 3
 
 ##### Data
-Link: from [google cloud](https://drive.google.com/open?id=11UGV3nbVv1x9IC--_tK3Uxf7hA6rlbsS) or [baidu cloud](https://pan.baidu.com/s/1jIp9t30oYivrAvrgUgIoLQ) Password: ruck
+Link: from [google cloud](https://drive.google.com/open?id=11UGV3nbVv1x9IC--_tK3Uxf7hA6rlbsS)    
 Paste it to widerface dir
 
 ## Training
