@@ -1,0 +1,13 @@
+__pycache__/*
+*.pyc
+build/
+dist/
+Pipfile
+Pipfile.lock
+.mypy_cache/
+.vscode/
+.idea/
+.DS_Store
+**/__pycache__/
+/venv
+/data/widerface
