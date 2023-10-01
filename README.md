@@ -5,8 +5,10 @@ A [PyTorch](https://pytorch.org/) implementation of [RetinaFace: Single-stage De
 ## Additional features
 - Added Face Alignment https://github.com/licksylick/retinaface_with_face_alignment/blob/9ceb46a270b8a5037024b328d92b1f75b2585429/face_alignment.py#L7
 - Added CPU-support (M1 also) for train/val
-
-    python train.py --network resnet50 --num_workers 1 --cpu_usage True
+```python
+python train.py --network resnet50 --num_workers 1 --cpu_usage True
+```
+    
 
 ## Installation
 ##### Clone and install
