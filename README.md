@@ -3,7 +3,8 @@
 A [PyTorch](https://pytorch.org/) implementation of [RetinaFace: Single-stage Dense Face Localisation in the Wild](https://arxiv.org/abs/1905.00641).
 
 ## Additional features
-- Added Face Alignment https://github.com/licksylick/retinaface_with_face_alignment/blob/9ceb46a270b8a5037024b328d92b1f75b2585429/face_alignment.py#L7
+- Added Face Alignment (it uses in getitem) https://github.com/licksylick/retinaface_with_face_alignment/blob/9ceb46a270b8a5037024b328d92b1f75b2585429/face_alignment.py#L7
+  ![image description](https://i.ibb.co/gz7wDc5/2023-10-01-22-00-34.png)
 - Added CPU-support (M1 also) for train/val
 ```python
 python train.py --network resnet50 --num_workers 1 --cpu_usage True
