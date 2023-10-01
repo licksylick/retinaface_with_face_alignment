@@ -1,71 +1,30 @@
 # RetinaFace in PyTorch
 
-A [PyTorch](https://pytorch.org/) implementation of [RetinaFace: Single-stage Dense Face Localisation in the Wild](https://arxiv.org/abs/1905.00641). Model size only 1.7M, when Retinaface use mobilenet0.25 as backbone net. We also provide resnet50 as backbone net to get better result. The official code in Mxnet can be found [here](https://github.com/deepinsight/insightface/tree/master/RetinaFace).
+A [PyTorch](https://pytorch.org/) implementation of [RetinaFace: Single-stage Dense Face Localisation in the Wild](https://arxiv.org/abs/1905.00641).
 
-## Mobile or Edge device deploy
-We also provide a set of Face Detector for edge device in [here](https://github.com/biubug6/Face-Detector-1MB-with-landmark) from python training to C++ inference.
-
-## WiderFace Val Performance in single scale When using Resnet50 as backbone net.
-| Style | easy | medium | hard |
-|:-|:-:|:-:|:-:|
-| Pytorch (same parameter with Mxnet) | 94.82 % | 93.84% | 89.60% |
-| Pytorch (original image scale) | 95.48% | 94.04% | 84.43% |
-| Mxnet | 94.86% | 93.87% | 88.33% |
-| Mxnet(original image scale) | 94.97% | 93.89% | 82.27% |
-
-## WiderFace Val Performance in single scale When using Mobilenet0.25 as backbone net.
-| Style | easy | medium | hard |
-|:-|:-:|:-:|:-:|
-| Pytorch (same parameter with Mxnet) | 88.67% | 87.09% | 80.99% |
-| Pytorch (original image scale) | 90.70% | 88.16% | 73.82% |
-| Mxnet | 88.72% | 86.97% | 79.19% |
-| Mxnet(original image scale) | 89.58% | 87.11% | 69.12% |
-<p align="center"><img src="curve/Widerface.jpg" width="640"\></p>
-
-## FDDB Performance.
-| FDDB(pytorch) | performance |
-|:-|:-:|
-| Mobilenet0.25 | 98.64% |
-| Resnet50 | 99.22% |
-<p align="center"><img src="curve/FDDB.png" width="640"\></p>
-
-### Contents
-- [Installation](#installation)
-- [Training](#training)
-- [Evaluation](#evaluation)
-- [TensorRT](#tensorrt)
-- [References](#references)
+## Additional features
+- Added Face Alignment (it uses in getitem) https://github.com/licksylick/retinaface_with_face_alignment/blob/9ceb46a270b8a5037024b328d92b1f75b2585429/face_alignment.py#L7
+  <img src="https://i.postimg.cc/s2YTV8vx/2023-10-01-22-00-34.png" alt="Face Alignment" height="200">
+- Added CPU-support (M1 also) for train/val
+```python
+python train.py --network resnet50 --num_workers 1 --cpu_usage True
+```
+    
 
 ## Installation
 ##### Clone and install
-1. git clone https://github.com/biubug6/Pytorch_Retinaface.git
+1. git clone [https://github.com/licksylick/retinaface_with_face_alignment.git](https://github.com/licksylick/retinaface_with_face_alignment.git)  
+2. !wget https://github.com/davisking/dlib-models/raw/4af9b776281dd7d6e2e30d4a2d40458b1e254e40/shape_predictor_5_face_landmarks.dat.bz2  
+   !bzip2 -d shape_predictor_5_face_landmarks.dat.bz2  
+   Put this file in project root
 
-2. Pytorch version 1.1.0+ and torchvision 0.3.0+ are needed.
+4. Pytorch version 1.1.0+ and torchvision 0.3.0+ are needed.
 
-3. Codes are based on Python 3
+5. Codes are based on Python 3
 
 ##### Data
-1. Download the [WIDERFACE](http://shuoyang1213.me/WIDERFACE/WiderFace_Results.html) dataset.
-
-2. Download annotations (face bounding boxes & five facial landmarks) from [baidu cloud](https://pan.baidu.com/s/1Laby0EctfuJGgGMgRRgykA) or [dropbox](https://www.dropbox.com/s/7j70r3eeepe4r2g/retinaface_gt_v1.1.zip?dl=0)
-
-3. Organise the dataset directory as follows:
-
-```Shell
-  ./data/widerface/
-    train/
-      images/
-      label.txt
-    val/
-      images/
-      wider_val.txt
-```
-ps: wider_val.txt only include val file names but not label information.
-
-##### Data1
-We also provide the organized dataset we used as in the above directory structure.
-
-Link: from [google cloud](https://drive.google.com/open?id=11UGV3nbVv1x9IC--_tK3Uxf7hA6rlbsS) or [baidu cloud](https://pan.baidu.com/s/1jIp9t30oYivrAvrgUgIoLQ) Password: ruck
+Link: from [google cloud](https://drive.google.com/open?id=11UGV3nbVv1x9IC--_tK3Uxf7hA6rlbsS)    
+Paste it to widerface dir
 
 ## Training
 We provide restnet50 and mobilenet0.25 as backbone network to train model.
@@ -112,10 +71,6 @@ python test_fddb.py --trained_model weight_file --network mobile0.25 or resnet50
 
 3. Download [eval_tool](https://bitbucket.org/marcopede/face-eval) to evaluate the performance.
 
-<p align="center"><img src="curve/1.jpg" width="640"\></p>
-
-## TensorRT
--[TensorRT](https://github.com/wang-xinyu/tensorrtx/tree/master/retinaface)
 
 ## References
 - [FaceBoxes](https://github.com/zisianw/FaceBoxes.PyTorch)
