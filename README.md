@@ -20,6 +20,7 @@ python train.py --network resnet50 --num_workers 1 --cpu_usage True
 
 ##### Data
 Link: from [google cloud](https://drive.google.com/open?id=11UGV3nbVv1x9IC--_tK3Uxf7hA6rlbsS) or [baidu cloud](https://pan.baidu.com/s/1jIp9t30oYivrAvrgUgIoLQ) Password: ruck
+Paste it to widerface dir
 
 ## Training
 We provide restnet50 and mobilenet0.25 as backbone network to train model.
