@@ -12,7 +12,7 @@ python train.py --network resnet50 --num_workers 1 --cpu_usage True
 
 ## Installation
 ##### Clone and install
-1. git clone [https://github.com/biubug6/Pytorch_Retinaface.git](https://github.com/licksylick/retinaface_with_face_alignment.git)
+1. git clone [https://github.com/licksylick/retinaface_with_face_alignment.git](https://github.com/licksylick/retinaface_with_face_alignment.git)
 
 2. Pytorch version 1.1.0+ and torchvision 0.3.0+ are needed.
 
