@@ -15,7 +15,7 @@ class FaceAlignmenter():
         if len(rects) > 0:
             for rect in rects:
                 x = rect.left()
-                y = rect.topf()
+                y = rect.top()
                 w = rect.right()
                 h = rect.bottom()
                 shape = self.predictor(gray, rect)
